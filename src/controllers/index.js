@@ -1,0 +1,1 @@
+module.exports.IngredientsController = require('./ingredients.controller');
