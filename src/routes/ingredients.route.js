@@ -13,6 +13,7 @@ router.get(
 router.get(
     '',
     (req, res) => {
+        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
         Ingredient.findAll().then(rsp => {
             res.send(rsp);
         })
