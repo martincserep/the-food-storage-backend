@@ -1,5 +1,7 @@
 const express = require('express');
 const { Food } = require('../models/foods.model');
+const { Ingredient } = require('../models/Ingredient.model');
+const { Recipe } = require('../models/recipe.model');
 
 const router = express.Router();
 
@@ -17,6 +19,14 @@ router.get(
             res.send(rsp)
         })
     },
+)
+
+router.get(
+    '/:id',
+    (req, res) => {
+        Recipe.findAll({ include: [Food]})
+
+    }
 )
 
 module.exports = router;
